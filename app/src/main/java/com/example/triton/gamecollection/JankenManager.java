@@ -1,11 +1,15 @@
 package com.example.triton.gamecollection;
-import java.util.InputMismatchException;
 import java.util.Random;
-import java.util.Scanner;
 
+/**
+ * じゃんけんの手を生成や、判定など、じゃんけんそのものの処理を担当する
+ */
 public class JankenManager {
 
+    // 相手(CPU)の手
+    // 1: グー, 2: チョキ, 3: パー
     private int opponentHand;
+    // プレイヤーの手
     private int playerHand;
 
     public JankenManager() {
@@ -51,111 +55,4 @@ public class JankenManager {
         }
         return null;
     }
-
-    public static void main(String[] args) {
-
-        System.out.println("じゃん、けん...");
-        System.out.println("数字を入力して下さい。");
-        System.out.println("1: グー, 2: チョキ, 3: パー");
-
-        Random random = new Random();
-
-        int randomValue = random.nextInt(2) + 1;
-
-        Scanner sc = new Scanner(System.in);
-
-        int line = 0;
-
-        try {
-            line =  sc.nextInt();
-        } catch(InputMismatchException e) {
-            System.out.println("1 ~ 3 (半角文字)を入力して下さい。");
-            return;
-        }
-
-        System.out.println("あなた: " + convertNumberToHand(line));
-        System.out.println("相手: " + convertNumberToHand(randomValue));
-
-        if (randomValue == 1) {
-
-            if (line == 1) {
-                System.out.println("あいこ");
-            }
-
-            else if (line == 2) {
-                System.out.println("負け");
-            }
-
-            else if (line == 3) {
-                System.out.println("勝ち");
-            }
-
-            else {
-
-                System.out.println("1 ~ 3 (半角文字)を入力して下さい。");
-            }
-        }
-
-        else if (randomValue == 2) {
-
-            if (line == 1) {
-                System.out.println("勝ち");
-            }
-
-            else if (line == 2) {
-                System.out.println("あいこ");
-            }
-
-            else if (line == 3) {
-                System.out.println("負け");
-            }
-            else {
-                System.out.println("1 ~ 3 (半角文字)を入力して下さい。");
-            }
-        }
-        else if (randomValue == 3) {
-
-            if (line == 1) {
-                System.out.println("負け");
-            }
-
-            else if (line == 2) {
-                System.out.println("勝ち");
-            }
-
-            else if (line == 3) {
-                System.out.println("あいこ");
-            }
-
-            else {
-                System.out.println("1 ~ 3 (半角文字)を入力して下さい。");
-
-            }
-        }
-
-    }
-
-    public static String convertNumberToHand(int num) {
-
-        if ( num == 1 ) {
-
-            return "グー";
-
-        }
-
-        else if ( num == 2 ) {
-
-            return "チョキ";
-        }
-
-        else if ( num == 3 ) {
-
-            return "パー";
-        }
-
-        else {
-            return "";
-        }
-    }
-
 }

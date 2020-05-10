@@ -13,7 +13,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
+    /**
+     * "じゃんけん" と表示されたボタンを押下すると、じゃんけんゲームが始まる
+     */
     public void onTappedJankenButton(View view) {
 
         Intent intent = new Intent(this, JankenActivity.class);
@@ -21,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onTappedKazuateButton(View view) {
+    /**
+     * "数当て" と表示されたボタンを押下すると、数当てゲームが始まる
+     */
+     public void onTappedKazuateButton(View view) {
 
         Intent intent = new Intent(this, KazuateActivity.class);
         startActivity(intent);

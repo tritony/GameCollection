@@ -2,10 +2,10 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--相手(CPU)の手の上に表示されているテキスト-->
     <TextView
         android:id="@+id/opponent_name"
         android:layout_width="wrap_content"
@@ -20,6 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--プレイヤー用のボタンの上に表示されているメッセージ-->
     <TextView
         android:id="@+id/player_required_message"
         android:layout_width="wrap_content"
@@ -34,6 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/opponent_hand" />
 
+    <!--プレイヤーが手を選択する前に表示されてる相手(CPU)のグー画像-->
     <ImageView
         android:id="@+id/opponent_hand"
         android:layout_width="139dp"
@@ -48,6 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/opponent_name"
         app:srcCompat="@drawable/rock" />
 
+    <!--グーが描かれたプレイヤー用のボタン-->
     <ImageButton
         android:id="@+id/button_rock_hand"
         android:layout_width="100dp"
@@ -64,6 +67,7 @@
         app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/rock" />
 
+    <!--チョキが描かれたプレイヤー用のボタン-->
     <ImageButton
         android:id="@+id/button_scissors_hand"
         android:layout_width="100dp"
@@ -80,6 +84,7 @@
         app:layout_constraintVertical_bias="0.909"
         app:srcCompat="@drawable/scissors" />
 
+    <!--パーが描かれたプレイヤー用のボタン-->
     <ImageButton
         android:id="@+id/button_paper_hand"
         android:layout_width="100dp"
@@ -100,6 +105,7 @@
         app:layout_constraintVertical_bias="0.217"
         app:srcCompat="@drawable/paper" />
 
+    <!--プレイヤーが選択した手-->
     <ImageView
         android:id="@+id/player_hand"
         android:layout_width="100dp"

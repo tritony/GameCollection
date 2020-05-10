@@ -7,14 +7,12 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class JankenActivity extends AppCompatActivity {
     private JankenManager jankenManager;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +23,10 @@ public class JankenActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * グー、チョキ、パーのボタンのうち、いずれかを押下したときに呼ばれる
+     * @param view グー, チョキ, パー いずれかの ImageButton
+     */
     public void onTappedHandButton(View view) {
 
         final ImageView playerHand = findViewById(R.id.player_hand);
@@ -71,6 +73,8 @@ public class JankenActivity extends AppCompatActivity {
             opponentHand.setImageResource(R.drawable.paper);
         }
 
+        // 判定結果をダイアログに表示させる。
+        // また、プレイヤーがゲームを再プレイするかどうかで、画面遷移先を変更する
         final Boolean judgeResult = jankenManager.judge();
         String resultMessage = "";
 
@@ -113,7 +117,3 @@ public class JankenActivity extends AppCompatActivity {
 
     }
 }
-
-//        Intent intent = new Intent(this, JankenActivity.class);
-//        startActivity(intent);
-//
